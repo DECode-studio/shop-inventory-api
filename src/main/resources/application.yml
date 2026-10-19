@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: shop-inventory-api
+  datasource:
+    url: jdbc:sqlite:shop_inventory.db
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        connection:
+          foreign_keys: true
+
+# OpenAPI / Swagger configuration
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: method
+
+logging:
+  level:
+    root: INFO
+    com.geli.shopinventory: DEBUG
+    org.hibernate.SQL: INFO
+
